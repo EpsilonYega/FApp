@@ -12,52 +12,61 @@ namespace FApp.CMD
         static void Main(string[] args)
         {
             Program program = new Program();
-            program.InputText();
+            program.InputData();
         }
-        private void InputText()
+        private void InputData()
         {
             Console.WriteLine("Добро пожаловать!");
             Console.Write("Введите имя пользователя:");
-            string name = InputName();
-            Console.Write("Введите пол пользователя:");
-            string gender = InputGender();
-            Console.Write("Введите дату рождения пользователя:");
-            DateTime birthDate = InputDate();
-            Console.Write("Введите вес пользователя:");
-            double weight = InputWeight();
-            Console.Write("Введите рост пользователя:");
-            double height = InputHeight();
-            var userController = new UserController(name, gender, birthDate, weight, height);
-            SaveController(userController);
-        }
-        private string InputName()
-        {
+
             var name = Console.ReadLine();
-            return name;
+            
+            var userController = new UserController(name);
+            
+            if (userController.IsNewUser)
+            {
+                Console.Write("Введите пол:");
+                var gender = Console.ReadLine();
+                DateTime birthDate = ParseDateTime();
+                double weight = ParseDouble("вес");
+                double height = ParseDouble("рост");
+                
+                userController.SetNewUserData(gender, birthDate, weight, height);
+            }
+            
+            Console.WriteLine(userController.CurrentUser);
+            
+            Console.ReadLine();
         }
-        private string InputGender()
+        private double ParseDouble(string name)
         {
-            var gender = Console.ReadLine();
-            return gender;
+            while (true)
+            {
+                Console.Write($"Введите {name}:");
+                if (double.TryParse(Console.ReadLine(), out double value))
+                {
+                    return value;
+                }
+                else
+                {
+                    Console.WriteLine($"Неверный формат {name}!");
+                }
+            }
         }
-        private DateTime InputDate()
+        private DateTime ParseDateTime()
         {
-            DateTime.TryParse(Console.ReadLine(), out var birthDate);
-            return birthDate;
-        }
-        private double InputWeight()
-        {
-            double.TryParse(Console.ReadLine(), out var weight);
-            return weight;
-        }
-        private double InputHeight()
-        {
-            double.TryParse(Console.ReadLine(), out var height);
-            return height;
-        }
-        private void SaveController(UserController userController)
-        {
-            userController.Save();
+            while (true)
+            {
+                Console.Write("Введите дату рождения (dd:MM:yyyy):");
+                if (DateTime.TryParse(Console.ReadLine(), out DateTime birthDate))
+                {
+                    return birthDate;
+                }
+                else
+                {
+                    Console.WriteLine("Неверный формат даты рождения!");
+                }
+            }
         }
     }
 }
