@@ -2,7 +2,9 @@
 using FApp.BL.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,8 +19,14 @@ namespace FApp.CMD
         }
         private void InputData()
         {
-            Console.WriteLine("Добро пожаловать!");
-            Console.Write("Введите имя пользователя:");
+            //Поменять кодировку при свапе языка (как минимум для Китайского)
+            var culture = CultureInfo.CreateSpecificCulture("ru-ru");
+            var resourceManager = new ResourceManager("FApp.CMD.Languages.Messages", typeof(Program).Assembly);
+            Console.WriteLine(resourceManager.GetString("Hello", culture));
+            Console.WriteLine(resourceManager.GetString("EnterName", culture));
+
+            //Console.WriteLine(Languages.Messages_ru_ru.Hello); 
+            //Console.Write(Languages.Messages_ru_ru.EnterName);
 
             var name = Console.ReadLine();
             
@@ -27,7 +35,7 @@ namespace FApp.CMD
 
             if (userController.IsNewUser)
             {
-                Console.Write("Введите пол:");
+                Console.Write(resourceManager.GetString("EnterTheGender", culture));
                 var gender = Console.ReadLine();
                 DateTime birthDate = ParseDateTime();
                 double weight = ParseDouble("вес");
@@ -37,8 +45,8 @@ namespace FApp.CMD
             }
             
             Console.WriteLine(userController.CurrentUser);
-            Console.WriteLine("Что вы хотите сделать?");
-            Console.WriteLine("Е - ввести прием пищи");
+            Console.WriteLine(resourceManager.GetString("WaitingForAction", culture));
+            Console.WriteLine(resourceManager.GetString("EnterEating", culture));
             var key = Console.ReadKey();
             Console.WriteLine();
             if (key.Key == ConsoleKey.E)
