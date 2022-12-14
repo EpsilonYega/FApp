@@ -10,7 +10,7 @@ namespace FApp.BL.Controller
     /// <summary>
     /// Контроллер пользователя.
     /// </summary>
-    public class UserController
+    public class UserController : ControllerBase
     {
         /// <summary>
         /// Пользователь приложения.
@@ -18,6 +18,7 @@ namespace FApp.BL.Controller
         public List<User> Users { get; }
         public User CurrentUser { get; }
         public bool IsNewUser { get; } = false;
+        private const string USERS_FILE_NAME = "users.dat";
         /// <summary>
         /// Создание нового контроллера пользователя.
         /// </summary>
@@ -46,19 +47,7 @@ namespace FApp.BL.Controller
         /// <returns></returns>
         private List<User> GetUsersData()
         {
-            var formatter = new BinaryFormatter();
-
-            using (var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
-            {
-                if (fs.Length > 0 && formatter.Deserialize(fs) is List<User> users) //здесь выбивает исключение если файл пустой
-                {
-                    return users;
-                }
-                else
-                {
-                    return new List<User>();
-                }
-            }
+            return Load<List<User>>(USERS_FILE_NAME) ?? new List<User>();
         }
         public void SetNewUserData(string genderName, DateTime birthDate, double weight = 1, double height = 1)
         {
@@ -75,11 +64,7 @@ namespace FApp.BL.Controller
         /// </summary>
         public void Save()
         {
-            var formatter = new BinaryFormatter();
-            using(var fs = new FileStream("users.dat", FileMode.OpenOrCreate))
-            {
-                formatter.Serialize(fs, Users);
-            }
+            Save(USERS_FILE_NAME, Users);
         }
         /// <summary>
         /// Получить данные пользователя.
