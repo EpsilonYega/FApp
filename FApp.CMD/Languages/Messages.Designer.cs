@@ -61,11 +61,74 @@ namespace FApp.CMD.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на calories.
+        /// </summary>
+        internal static string Calories {
+            get {
+                return ResourceManager.GetString("Calories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на carbohydrates.
+        /// </summary>
+        internal static string Carbohydrates {
+            get {
+                return ResourceManager.GetString("Carbohydrates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Date of birth.
+        /// </summary>
+        internal static string DateOfBirth {
+            get {
+                return ResourceManager.GetString("DateOfBirth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на energy loss per minute.
+        /// </summary>
+        internal static string EnergyLossPerMinute {
+            get {
+                return ResourceManager.GetString("EnergyLossPerMinute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Please, enter the field:.
+        /// </summary>
+        internal static string Enter {
+            get {
+                return ResourceManager.GetString("Enter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на A - to fill the exercise.
+        /// </summary>
+        internal static string EnterActivity {
+            get {
+                return ResourceManager.GetString("EnterActivity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на E - to fill eating process.
         /// </summary>
         internal static string EnterEating {
             get {
                 return ResourceManager.GetString("EnterEating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Please, enter exercise name here:.
+        /// </summary>
+        internal static string EnterExerciseName {
+            get {
+                return ResourceManager.GetString("EnterExerciseName", resourceCulture);
             }
         }
         
@@ -79,11 +142,38 @@ namespace FApp.CMD.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Please, enter the product`s name:.
+        /// </summary>
+        internal static string EnterProductName {
+            get {
+                return ResourceManager.GetString("EnterProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Q - to quit .
+        /// </summary>
+        internal static string EnterQuit {
+            get {
+                return ResourceManager.GetString("EnterQuit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Please, enter the gender:.
         /// </summary>
         internal static string EnterTheGender {
             get {
                 return ResourceManager.GetString("EnterTheGender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на fats.
+        /// </summary>
+        internal static string Fats {
+            get {
+                return ResourceManager.GetString("Fats", resourceCulture);
             }
         }
         
@@ -97,11 +187,56 @@ namespace FApp.CMD.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Invalid field format:.
+        /// </summary>
+        internal static string InvalidFieldFormat {
+            get {
+                return ResourceManager.GetString("InvalidFieldFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на proteins.
+        /// </summary>
+        internal static string Proteins {
+            get {
+                return ResourceManager.GetString("Proteins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на the begining of exercise.
+        /// </summary>
+        internal static string TheBeginningOfExercise {
+            get {
+                return ResourceManager.GetString("TheBeginningOfExercise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на the end of exercise.
+        /// </summary>
+        internal static string TheEndOfExercise {
+            get {
+                return ResourceManager.GetString("TheEndOfExercise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на What do you wanna do?.
         /// </summary>
         internal static string WaitingForAction {
             get {
                 return ResourceManager.GetString("WaitingForAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на weight of meal.
+        /// </summary>
+        internal static string WeightOfMeal {
+            get {
+                return ResourceManager.GetString("WeightOfMeal", resourceCulture);
             }
         }
     }

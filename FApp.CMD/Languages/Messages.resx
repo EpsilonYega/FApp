@@ -117,19 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Calories" xml:space="preserve">
+    <value>calories</value>
+  </data>
+  <data name="Carbohydrates" xml:space="preserve">
+    <value>carbohydrates</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="EnergyLossPerMinute" xml:space="preserve">
+    <value>energy loss per minute</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>Please, enter the field:</value>
+  </data>
+  <data name="EnterActivity" xml:space="preserve">
+    <value>A - to fill the exercise</value>
+  </data>
   <data name="EnterEating" xml:space="preserve">
     <value>E - to fill eating process</value>
+  </data>
+  <data name="EnterExerciseName" xml:space="preserve">
+    <value>Please, enter exercise name here:</value>
   </data>
   <data name="EnterName" xml:space="preserve">
     <value>Please, enter username:</value>
   </data>
+  <data name="EnterProductName" xml:space="preserve">
+    <value>Please, enter the product`s name:</value>
+  </data>
+  <data name="EnterQuit" xml:space="preserve">
+    <value>Q - to quit </value>
+  </data>
   <data name="EnterTheGender" xml:space="preserve">
     <value>Please, enter the gender:</value>
+  </data>
+  <data name="Fats" xml:space="preserve">
+    <value>fats</value>
   </data>
   <data name="Hello" xml:space="preserve">
     <value>Welcome to the FApp!   </value>
   </data>
+  <data name="InvalidFieldFormat" xml:space="preserve">
+    <value>Invalid field format:</value>
+  </data>
+  <data name="Proteins" xml:space="preserve">
+    <value>proteins</value>
+  </data>
+  <data name="TheBeginningOfExercise" xml:space="preserve">
+    <value>the begining of exercise</value>
+  </data>
+  <data name="TheEndOfExercise" xml:space="preserve">
+    <value>the end of exercise</value>
+  </data>
   <data name="WaitingForAction" xml:space="preserve">
     <value>What do you wanna do?</value>
+  </data>
+  <data name="WeightOfMeal" xml:space="preserve">
+    <value>weight of meal</value>
   </data>
 </root>
