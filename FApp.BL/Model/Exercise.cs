@@ -9,12 +9,17 @@ namespace FApp.BL.Model
     [Serializable]
     public class Exercise
     {
-        public DateTime Start { get; }
-        public DateTime Finish { get; }
-        public Activity Activity { get; }
-        public User User { get; }
+        public int Id { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime Finish { get; set; }
+        public int ActivityId { get; set; }
+        public Activity Activity { get; set; }
+        public int UserId { get; set; }
+        public virtual User User { get; set; }
+        public Exercise() { }
         public Exercise(DateTime start, DateTime finish, Activity activity, User user)
         {
+            //Null?
             Start = start;
             Finish = finish;
             Activity = activity;

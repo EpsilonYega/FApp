@@ -18,7 +18,6 @@ namespace FApp.BL.Controller
         public List<User> Users { get; }
         public User CurrentUser { get; }
         public bool IsNewUser { get; } = false;
-        private const string USERS_FILE_NAME = "users.dat";
         /// <summary>
         /// Создание нового контроллера пользователя.
         /// </summary>
@@ -38,7 +37,6 @@ namespace FApp.BL.Controller
                 CurrentUser = new User(userName);
                 Users.Add(CurrentUser);
                 IsNewUser = true;
-                Save();
             }
         }
         /// <summary>
@@ -47,7 +45,7 @@ namespace FApp.BL.Controller
         /// <returns></returns>
         private List<User> GetUsersData()
         {
-            return Load<List<User>>(USERS_FILE_NAME) ?? new List<User>();
+            return Load<User>() ?? new List<User>(); 
         }
         public void SetNewUserData(string genderName, DateTime birthDate, double weight = 1, double height = 1)
         {
@@ -64,7 +62,7 @@ namespace FApp.BL.Controller
         /// </summary>
         public void Save()
         {
-            Save(USERS_FILE_NAME, Users);
+            Save(Users);
         }
         /// <summary>
         /// Получить данные пользователя.
